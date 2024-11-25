@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Extraction</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    
+    {% block content1 %}
+    {% endblock %}
+    
+</head>
+
+<body class="background" style="background-image: url('{% static 'img/background_images.jpg' %}');">
+    <nav class="navbar navbar-expand-lg navbar-dark border-bottom border-body fs-5 ">
+        <div class="container">
+            <a class="navbar-brand" href="#">Welcome to Resume Extraction</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                    <li class="nav-item mx-auto mx-auto">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item mx-auto">
+                        <a class="nav-link " href="{% url 'upload_file' %}">Upload Resume</a>
+                    </li>
+                    <li class="nav-item mx-auto">
+                        <a class="nav-link" href="{% url 'export_jobs_to_csv' %}">Download Excel Format</a>
+                    </li>
+                    <li class="nav-item mx-auto">
+                        <a class="nav-link" href="{% url 'job_description' %}">Resume Matching</a>
+                    </li>
+                    <li class="nav-item mx-auto">
+                        <a class="nav-link" href="{% url 'admin:index' %}">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}
+    {% endblock%}
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content1 %}
+<style>
+    .file-upload {
+        margin-bottom: 1rem;
+    }
+
+    .submit-btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+    }
+
+    .submit-btn:hover {
+        background-color: #0056b3;
+    }
+
+    .form-container {
+        margin-top: 2rem;
+        padding: 2rem;
+        border: 1px solid #ddd;
+        border-radius: 0.5rem;
+        background-color: #f8f9fa;
+    }
+</style>
+</style>
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="form-container ">
+        <div class="d-flex flex-row justify-content-between align-items-center">
+
+            <div>
+                <button class="btn btn-primary ml-2" type="button" data-toggle="collapse" data-target="#addUploadForm"
+                    aria-expanded="false" aria-controls="addPostForm">
+                    Upload Job Description
+                </button>
+            </div>
+        </div>
+        <!-- job description upload -->
+        <div class="collapse mt-3" id="addUploadForm">
+            <div class="card card-body">
+                <form action="" method="post" enctype="multipart/form-data"
+                    class="needs-validation" novalidate>
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Show matching result</button>
+                </form>
+            </div>
+            
+        </div>
+        
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}
